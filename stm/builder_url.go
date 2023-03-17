@@ -53,15 +53,13 @@ type sitemapURL struct {
 func (su *sitemapURL) validate() error {
 	var key string
 	var invalid bool
-	var locOk, hostOk bool
+	var locOk bool
 
 	for _, value := range su.data {
 		key = value[0].(string)
 		switch key {
 		case "loc":
 			locOk = true
-		case "host":
-			hostOk = true
 		}
 
 		invalid = true
@@ -76,18 +74,18 @@ func (su *sitemapURL) validate() error {
 		}
 	}
 
-	if invalid {
-		msg := fmt.Sprintf("Unknown map's key `%s` in URL type", key)
-		return errors.New(msg)
-	}
+	//if invalid {
+	//	msg := fmt.Sprintf("Unknown map's key `%s` in URL type", key)
+	//	return errors.New(msg)
+	//}
 	if !locOk {
 		msg := fmt.Sprintf("URL type must have `loc` map's key")
 		return errors.New(msg)
 	}
-	if !hostOk {
-		msg := fmt.Sprintf("URL type must have `host` map's key")
-		return errors.New(msg)
-	}
+	//if !hostOk {
+	//	msg := fmt.Sprintf("URL type must have `host` map's key")
+	//	return errors.New(msg)
+	//}
 	return nil
 }
 
@@ -115,6 +113,7 @@ func (su *sitemapURL) XML() []byte {
 	SetBuilderElementValue(url, su.data, "video")
 	SetBuilderElementValue(url, su.data, "image")
 	SetBuilderElementValue(url, su.data, "geo")
+	SetBuilderElementValue(url, su.data, "xhtml:link")
 
 	if su.opts.pretty {
 		doc.Indent(2)
