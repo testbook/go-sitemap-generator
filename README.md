@@ -32,6 +32,7 @@ func main() {
 Then
 
 ```console
+<<<<<<< HEAD
 $ go build
 ```
 
@@ -39,6 +40,8 @@ $ go build
 
 ```console
 $ go get gopkg.in/ikeikeikeike/go-sitemap-generator.v1/stm
+=======
+>>>>>>> v2
 $ go get gopkg.in/ikeikeikeike/go-sitemap-generator.v2/stm
 ```
 
@@ -160,7 +163,11 @@ func main() {
 
 ```go
 sm.Add(stm.URL{
+<<<<<<< HEAD
 	{"loc", "/news"},
+=======
+	{"loc", "/news"}, 
+>>>>>>> v2
 	{"news", stm.URL{
 	{"publication", stm.URL{
 		{"name",     "Example"},
@@ -182,7 +189,11 @@ Look at [Creating a Google News Sitemap](https://support.google.com/news/publish
 
 ```go
 sm.Add(stm.URL{
+<<<<<<< HEAD
 	{"loc", "/videos"},
+=======
+	{"loc", "/videos"}, 
+>>>>>>> v2
 	{"video", stm.URL{
 	{"thumbnail_loc", "http://www.example.com/video1_thumbnail.png"},
 	{"title",         "Title"},
@@ -202,7 +213,11 @@ Look at [Video sitemaps](https://support.google.com/webmasters/answer/80471) as 
 
 ```go
 sm.Add(stm.URL{
+<<<<<<< HEAD
 	{"loc", "/images"},
+=======
+	{"loc", "/images"}, 
+>>>>>>> v2
 	{"image", []stm.URL{
 	{{"loc", "http://www.example.com/image.png"}, {"title", "Image"}},
 	{{"loc", "http://www.example.com/image1.png"}, {"title", "Image1"}},
@@ -217,7 +232,11 @@ Look at [Image sitemaps](https://support.google.com/webmasters/answer/178636) as
 
 ```go
 sm.Add(stm.URL{
+<<<<<<< HEAD
 	{"loc", "/geos"},
+=======
+	{"loc", "/geos"}, 
+>>>>>>> v2
 	{"geo", stm.URL{
 	{"format", "kml"},
 },},
@@ -269,7 +288,11 @@ func main() {
 
 	sm.Add(stm.URL{{"loc", "/abouts"}, {"mobile", true}})
 
+<<<<<<< HEAD
 	sm.Add(stm.URL{{"loc", "/news"},
+=======
+	sm.Add(stm.URL{{"loc", "/news"}, 
+>>>>>>> v2
 	{"news", stm.URL{
 		{"publication", stm.URL{
 			{"name",     "Example"},
@@ -285,14 +308,22 @@ func main() {
 	},},
 	})
 
+<<<<<<< HEAD
 	sm.Add(stm.URL{{"loc", "/images"},
+=======
+	sm.Add(stm.URL{{"loc", "/images"}, 
+>>>>>>> v2
 	{"image", []stm.URL{
 		{{"loc", "http://www.example.com/image.png"}, {"title", "Image"}},
 		{{"loc", "http://www.example.com/image1.png"}, {"title", "Image1"}},
 	},},
 	})
 
+<<<<<<< HEAD
 	sm.Add(stm.URL{{"loc", "/videos"},
+=======
+	sm.Add(stm.URL{{"loc", "/videos"}, 
+>>>>>>> v2
 	{"video", stm.URL{
 		{"thumbnail_loc", "http://www.example.com/video1_thumbnail.png"},
 		{"title",         "Title"},
@@ -304,7 +335,11 @@ func main() {
 	},},
 	})
 
+<<<<<<< HEAD
 	sm.Add(stm.URL{{"loc", "/geos"},
+=======
+	sm.Add(stm.URL{{"loc", "/geos"}, 
+>>>>>>> v2
 	{"geo", stm.URL{
 		{"format", "kml"},
 	},},
