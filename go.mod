@@ -1,4 +1,4 @@
-module github.com/testbook/go-sitemap-generator v3.0.0
+module github.com/testbook/go-sitemap-generator v1.1.0
 
 
 require (
