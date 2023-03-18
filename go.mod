@@ -1,4 +1,4 @@
-module github.com/testbook/go-sitemap-generator v1.1.0
+module github.com/testbook/go-sitemap-generator
 
 require (
 	github.com/beevik/etree v1.1.0
