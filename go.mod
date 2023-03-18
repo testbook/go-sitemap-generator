@@ -1,4 +1,4 @@
-module github.com/testbook/go-sitemap-generator
+module module/github.com/testbook/go-sitemap-generator
 
 go 1.9
 
