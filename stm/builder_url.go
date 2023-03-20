@@ -74,18 +74,10 @@ func (su *sitemapURL) validate() error {
 		}
 	}
 
-	//if invalid {
-	//	msg := fmt.Sprintf("Unknown map's key `%s` in URL type", key)
-	//	return errors.New(msg)
-	//}
 	if !locOk {
 		msg := fmt.Sprintf("URL type must have `loc` map's key")
 		return errors.New(msg)
 	}
-	//if !hostOk {
-	//	msg := fmt.Sprintf("URL type must have `host` map's key")
-	//	return errors.New(msg)
-	//}
 	return nil
 }
 
@@ -97,7 +89,9 @@ func (su *sitemapURL) XML() []byte {
 	SetBuilderElementValue(url, su.data.URLJoinBy("loc", "host", "loc"), "loc")
 	if _, ok := SetBuilderElementValue(url, su.data, "lastmod"); !ok {
 		lastmod := url.CreateElement("lastmod")
-		lastmod.SetText(time.Now().Format(time.RFC3339))
+		year, month, day := time.Now().Date()
+		date := fmt.Sprintf("%d-%02d-%02d", year, month, day)
+		lastmod.SetText(date)
 	}
 	if _, ok := SetBuilderElementValue(url, su.data, "changefreq"); !ok {
 		changefreq := url.CreateElement("changefreq")
