@@ -8,4 +8,3 @@ require (
 	github.com/fatih/structs v1.1.0
 )
 
-replace github.com/ikeikeikeike/go-sitemap-generator v0.0.0-20180808084506-34e2328f3f18 => github.com/testbook/go-sitemap-generator v1.1.0
